@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ClickSync Plans & Pricing - Growth & Pro Plans | Loopstates</title>
+    <title>ClickSync Plans & Pricing - Free, Growth, and Pro Plans | Loopstates</title>
     <meta name="description"
-        content="Compare ClickSync Growth and Pro tiers. Find the plan that fits your business sync volume, custom field mappings, and automated tasks management rules.">
+        content="Compare ClickSync Free, Growth, and Pro tiers. Find the plan that fits your business sync volume, custom field mappings, and automated tasks management rules.">
     <link rel="icon" type="image/png" href="../favicon.png">
 
     <!-- Google Fonts -->
@@ -45,7 +45,7 @@
             padding: 2rem 1rem;
         }
 
-        .container { max-width: 1000px; margin: 0 auto; width: 100%; }
+        .container { max-width: 1100px; margin: 0 auto; width: 100%; }
 
         .glass-panel {
             background: var(--glass);
@@ -87,8 +87,8 @@
         /* Pricing Cards */
         .pricing-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
             margin-bottom: 4rem;
         }
 
@@ -96,7 +96,7 @@
             background: #fff;
             border: 1px solid var(--border);
             border-radius: 24px;
-            padding: 2.5rem;
+            padding: 2rem;
             display: flex;
             flex-direction: column;
             position: relative;
@@ -126,6 +126,7 @@
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.05em;
+            white-space: nowrap;
         }
 
         .tier-name {
@@ -137,7 +138,7 @@
 
         .tier-price {
             font-family: 'Outfit', sans-serif;
-            font-size: 3rem;
+            font-size: 2.75rem;
             font-weight: 700;
             margin-bottom: 1.5rem;
             display: flex;
@@ -153,9 +154,10 @@
 
         .tier-desc {
             color: var(--text-muted);
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             margin-bottom: 2rem;
             min-height: 3rem;
+            line-height: 1.5;
         }
 
         .feature-list {
@@ -167,22 +169,23 @@
         .feature-item {
             display: flex;
             align-items: flex-start;
-            gap: 12px;
-            margin-bottom: 12px;
-            font-size: 0.95rem;
+            gap: 10px;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
             color: var(--text);
+            line-height: 1.4;
         }
 
         .feature-item svg {
-            width: 20px;
-            height: 20px;
+            width: 18px;
+            height: 18px;
             flex-shrink: 0;
             margin-top: 2px;
         }
 
         .feature-item.disabled {
             color: var(--text-muted);
-            opacity: 0.6;
+            opacity: 0.5;
         }
 
         .cta-btn {
@@ -293,9 +296,7 @@
         .footer-logo img { height: 32px; width: auto; margin-bottom: 1rem; }
         .copyright { color: var(--text-muted); font-size: 0.85rem; }
 
-        @media (max-width: 640px) {
-            .glass-panel { padding: 2rem 1.5rem; }
-            h1 { font-size: 2rem; }
+        @media (max-width: 900px) {
             .pricing-grid { grid-template-columns: 1fr; }
         }
     </style>
@@ -309,69 +310,99 @@
                     <img src="logo.png" alt="ClickSync Logo" class="logo-img">
                     <h1>Plans & Pricing</h1>
                 </div>
-                <p class="hero-text">Scale your store operations. Automate your CRM sync from Shopify to ClickUp seamlessly.</p>
+                <p class="hero-text">Scale your store operations. Automate your CRM sync from Shopify to ClickUp seamlessly with a tier that fits your volume.</p>
             </header>
 
             <div class="pricing-grid">
-                <!-- Growth Plan -->
-                <div id="card-growth" class="price-card">
-                    <div class="tier-name">Growth Plan</div>
-                    <div class="tier-price">$9.99<span>/month</span></div>
-                    <p class="tier-desc">Great for growing businesses wanting simple sync automation.</p>
+                <!-- Free Plan -->
+                <div id="card-free" class="price-card">
+                    <div class="tier-name">Free Plan</div>
+                    <div class="tier-price">$0.00<span>/month</span></div>
+                    <p class="tier-desc">Ideal for small shops testing the integration or with low monthly volume.</p>
                     <ul class="feature-list">
                         <li class="feature-item">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
-                            Up to 1,000 synced events / mo
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color:var(--primary);"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                            Up to 100 synced tasks / mo
                         </li>
                         <li class="feature-item">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
-                            Orders & Customers Triggers
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color:var(--primary);"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                            Order & Customer Sync triggers
                         </li>
                         <li class="feature-item">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
-                            Status Mappings
-                        </li>
-                        <li class="feature-item">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
-                            Real-time Sync Logs (7 days)
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color:var(--primary);"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                            Standard description mappings
                         </li>
                         <li class="feature-item disabled">
                             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
                             Custom Field Mappings
                         </li>
+                        <li class="feature-item disabled">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                            Fulfillments, Drafts, & Refunds
+                        </li>
                     </ul>
-                    <a href="https://admin.shopify.com" class="cta-btn secondary">Upgrade in Store</a>
+                    <a href="https://clicksync.shopify.loopstates.com/" class="cta-btn secondary">Install Free Tier</a>
+                </div>
+
+                <!-- Growth Plan -->
+                <div id="card-growth" class="price-card">
+                    <div class="tier-name">Growth Plan</div>
+                    <div class="tier-price">$9.99<span>/month</span></div>
+                    <p class="tier-desc">Great for growing businesses wanting custom fields and additional triggers.</p>
+                    <ul class="feature-list">
+                        <li class="feature-item">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color:var(--primary);"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                            Up to 1,000 synced tasks / mo
+                        </li>
+                        <li class="feature-item">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color:var(--primary);"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                            Fulfillments, Drafts & Refunds triggers
+                        </li>
+                        <li class="feature-item">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color:var(--primary);"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                            Custom Field Mapping engine
+                        </li>
+                        <li class="feature-item">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color:var(--primary);"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                            Abandoned checkout triggers
+                        </li>
+                        <li class="feature-item disabled">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                            Line-Item Split Routing
+                        </li>
+                    </ul>
+                    <a href="https://clicksync.shopify.loopstates.com/" class="cta-btn secondary">Upgrade in Store</a>
                 </div>
 
                 <!-- Pro Plan -->
                 <div id="card-pro" class="price-card featured">
-                    <div class="popular-badge">Unlocks Custom Fields</div>
+                    <div class="popular-badge">Unlimited Tasks</div>
                     <div class="tier-name">Pro Plan</div>
                     <div class="tier-price">$24.99<span>/month</span></div>
                     <p class="tier-desc">Our ultimate package for complete database and CRM mapping controls.</p>
                     <ul class="feature-list">
                         <li class="feature-item">
                             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color:var(--primary);"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
-                            <strong>Up to 5,000 synced events / mo</strong>
+                            <strong>Unlimited Sync Tasks</strong>
                         </li>
                         <li class="feature-item">
                             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color:var(--primary);"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
-                            <strong>All Event Triggers (Draft Orders, Refunds, Fulfillments, Checkouts)</strong>
+                            <strong>Line-Item Split Routing</strong>
                         </li>
                         <li class="feature-item">
                             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color:var(--primary);"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
-                            <strong>Custom Field Mappings</strong>
+                            <strong>Bi-directional Status Fulfillments</strong>
                         </li>
                         <li class="feature-item">
                             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color:var(--primary);"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
-                            <strong>Custom Priorities & Assignee Rules</strong>
+                            <strong>Order Details Sidebar React widget</strong>
                         </li>
                         <li class="feature-item">
                             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color:var(--primary);"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
-                            <strong>Priority Sync Support</strong>
+                            <strong>Regional assignees & CRM tags</strong>
                         </li>
                     </ul>
-                    <a href="https://admin.shopify.com" class="cta-btn primary">Upgrade to Pro Now</a>
+                    <a href="https://clicksync.shopify.loopstates.com/" class="cta-btn primary">Upgrade to Pro Now</a>
                 </div>
             </div>
 
@@ -382,31 +413,33 @@
                         <thead>
                             <tr>
                                 <th>Feature</th>
+                                <th>Free Plan</th>
                                 <th>Growth Plan</th>
                                 <th>Pro Plan</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="category-row"><td colspan="3">Shopify Event Triggers</td></tr>
-                            <tr><td>Shopify Orders (Create/Update)</td><td class="check-icon">✓</td><td class="check-icon">✓</td></tr>
-                            <tr><td>New Customer Accounts</td><td class="check-icon">✓</td><td class="check-icon">✓</td></tr>
-                            <tr><td>Draft Orders (Created)</td><td class="cross-icon">✕</td><td class="check-icon">✓</td></tr>
-                            <tr><td>Refund Events</td><td class="cross-icon">✕</td><td class="check-icon">✓</td></tr>
-                            <tr><td>Fulfillment & Delivery Events</td><td class="cross-icon">✕</td><td class="check-icon">✓</td></tr>
-                            <tr><td>Checkout Cart Abandonment Updates</td><td class="cross-icon">✕</td><td class="check-icon">✓</td></tr>
+                            <tr class="category-row"><td colspan="4">Shopify Event Triggers</td></tr>
+                            <tr><td>Shopify Orders (Create)</td><td class="check-icon">✓</td><td class="check-icon">✓</td><td class="check-icon">✓</td></tr>
+                            <tr><td>New Customers Register</td><td class="check-icon">✓</td><td class="check-icon">✓</td><td class="check-icon">✓</td></tr>
+                            <tr><td>Draft Orders Created</td><td class="cross-icon">✕</td><td class="check-icon">✓</td><td class="check-icon">✓</td></tr>
+                            <tr><td>Refunds Generated</td><td class="cross-icon">✕</td><td class="check-icon">✓</td><td class="check-icon">✓</td></tr>
+                            <tr><td>Fulfillment & Delivery updates</td><td class="cross-icon">✕</td><td class="check-icon">✓</td><td class="check-icon">✓</td></tr>
+                            <tr><td>Abandoned Checkout Carts</td><td class="cross-icon">✕</td><td class="check-icon">✓</td><td class="check-icon">✓</td></tr>
                             
-                            <tr class="category-row"><td colspan="3">Sync Mapping Controls</td></tr>
-                            <tr><td>Task Title Template customization</td><td class="check-icon">✓</td><td class="check-icon">✓</td></tr>
-                            <tr><td>Task Description variables</td><td class="check-icon">✓</td><td class="check-icon">✓</td></tr>
-                            <tr><td>ClickUp Status Map matching</td><td class="check-icon">✓</td><td class="check-icon">✓</td></tr>
-                            <tr><td>Shopify fields to ClickUp Custom Fields</td><td class="cross-icon">✕</td><td class="check-icon">✓</td></tr>
-                            <tr><td>Dynamic Task Priority matching</td><td class="cross-icon">✕</td><td class="check-icon">✓</td></tr>
-                            <tr><td>Assignee Rules mappings</td><td class="cross-icon">✕</td><td class="check-icon">✓</td></tr>
+                            <tr class="category-row"><td colspan="4">Sync Mapping Controls</td></tr>
+                            <tr><td>Task Title Template</td><td class="check-icon">✓</td><td class="check-icon">✓</td><td class="check-icon">✓</td></tr>
+                            <tr><td>Task Description template</td><td class="check-icon">✓</td><td class="check-icon">✓</td><td class="check-icon">✓</td></tr>
+                            <tr><td>Custom ClickUp Field Mappings</td><td class="cross-icon">✕</td><td class="check-icon">✓</td><td class="check-icon">✓</td></tr>
+                            <tr><td>Bi-directional Status Actions</td><td class="cross-icon">✕</td><td class="cross-icon">✕</td><td class="check-icon">✓</td></tr>
+                            <tr><td>Line-Item Split Routing</td><td class="cross-icon">✕</td><td class="cross-icon">✕</td><td class="check-icon">✓</td></tr>
+                            <tr><td>Order Sidebar React Widget</td><td class="cross-icon">✕</td><td class="cross-icon">✕</td><td class="check-icon">✓</td></tr>
+                            <tr><td>Regional Assignee Rules & Tagging</td><td class="cross-icon">✕</td><td class="cross-icon">✕</td><td class="check-icon">✓</td></tr>
 
-                            <tr class="category-row"><td colspan="3">Operational Limits</td></tr>
-                            <tr><td>Monthly Sync Limit</td><td>1,000 items</td><td>5,000 items</td></tr>
-                            <tr><td>Historical Execution Logs</td><td>7 days</td><td>7 days</td></tr>
-                            <tr><td>Background Retry Mechanism</td><td class="check-icon">✓</td><td class="check-icon">✓</td></tr>
+                            <tr class="category-row"><td colspan="4">Limits & Performance</td></tr>
+                            <tr><td>Monthly Sync quota</td><td>100 tasks</td><td>1,000 tasks</td><td>Unlimited</td></tr>
+                            <tr><td>Historical Execution Logs</td><td>7 days</td><td>7 days</td><td>7 days</td></tr>
+                            <tr><td>Automatic Fail Retry Queue</td><td class="check-icon">✓</td><td class="check-icon">✓</td><td class="check-icon">✓</td></tr>
                         </tbody>
                     </table>
                 </div>

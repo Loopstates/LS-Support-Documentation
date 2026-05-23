@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ClickSync Documentation - Shopify to ClickUp CRM Sync | Loopstates</title>
+    <title>ClickSync Documentation - Shopify to ClickUp Sync | Loopstates</title>
     <meta name="description"
         content="Welcome to the ClickSync documentation. Learn how to configure your sync rules, map order variables to ClickUp custom fields, and track real-time CRM updates.">
     <link rel="icon" type="image/png" href="../favicon.png">
@@ -88,7 +88,7 @@
             justify-content: center;
             gap: 0.75rem;
             flex-wrap: wrap;
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
         }
 
         .badge {
@@ -107,139 +107,77 @@
 
         h2 {
             font-family: 'Outfit', sans-serif;
-            font-size: 1.5rem;
-            margin: 2.5rem 0 1.5rem;
+            font-size: 1.6rem;
+            margin: 2rem 0 1.5rem;
             text-align: center;
-        }
-
-        /* USP Section */
-        .usp-section { margin: 0 0 3rem; }
-        .usp-label {
-            text-align: center;
-            font-size: 0.8rem;
-            font-weight: 700;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            color: var(--primary);
-            margin-bottom: 1.25rem;
-        }
-
-        .usp-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-            gap: 1.25rem;
-        }
-
-        .usp-card {
-            background: #fff;
-            border: 1px solid #e2e8f0;
-            border-radius: 20px;
-            padding: 1.75rem 1.65rem;
-            position: relative;
-            overflow: hidden;
-            transition: box-shadow 0.3s ease, transform 0.3s ease;
-        }
-
-        .usp-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 16px 30px -8px rgba(106, 43, 143, 0.12);
-        }
-
-        .usp-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, var(--primary), #8b5cf6);
-        }
-
-        .usp-card.pro::before {
-            background: linear-gradient(90deg, #f59e0b, #fbbf24);
-        }
-
-        .usp-num {
-            font-family: 'Outfit', sans-serif;
-            font-size: 0.75rem;
-            font-weight: 700;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            color: var(--primary);
-            margin-bottom: 0.75rem;
-            display: block;
-        }
-
-        .usp-card h3 {
-            font-family: 'Outfit', sans-serif;
-            font-size: 1.15rem;
-            font-weight: 700;
             color: var(--text);
-            margin-bottom: 0.6rem;
-            line-height: 1.35;
-        }
-
-        .usp-card p {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            line-height: 1.6;
-        }
-
-        .pro-badge {
-            display: inline-block;
-            margin-top: 1rem;
-            padding: 0.3rem 0.8rem;
-            background: rgba(245, 158, 11, 0.1);
-            border: 1px solid rgba(245, 158, 11, 0.3);
-            border-radius: 999px;
-            font-size: 0.78rem;
-            font-weight: 600;
-            color: #92400e;
-            letter-spacing: 0.02em;
         }
 
         /* Features Grid */
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 1.25rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
             margin-bottom: 3rem;
         }
 
         .feature-card {
-            background: rgba(255, 255, 255, 0.5);
-            border: 1px solid var(--glass-border);
-            border-radius: 16px;
-            padding: 1.5rem;
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 2rem;
             transition: all 0.3s ease;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+            position: relative;
+            overflow: hidden;
         }
 
         .feature-card:hover {
             transform: translateY(-4px);
-            background: #fff;
-            box-shadow: var(--shadow);
+            box-shadow: 0 16px 30px -8px rgba(106, 43, 143, 0.12);
             border-color: var(--primary);
         }
 
-        .feature-card .icon {
-            font-size: 1.75rem;
-            margin-bottom: 0.75rem;
-            display: block;
+        .feature-card .icon-circle {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: var(--primary-soft);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.25rem;
+            color: var(--primary);
         }
 
         .feature-card strong {
             display: block;
             color: var(--text);
             font-family: 'Outfit', sans-serif;
-            font-size: 1rem;
+            font-size: 1.15rem;
             font-weight: 600;
-            margin-bottom: 0.4rem;
+            margin-bottom: 0.5rem;
         }
 
         .feature-card p {
             font-size: 0.9rem;
             color: var(--text-muted);
-            line-height: 1.55;
+            line-height: 1.6;
+        }
+
+        .pro-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(245, 158, 11, 0.1);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            color: #92400e;
+            font-size: 0.72rem;
+            font-weight: 600;
+            padding: 2px 8px;
+            border-radius: 20px;
+            letter-spacing: 0.02em;
         }
 
         /* Navigation */
@@ -289,13 +227,6 @@
         .footer-logo:hover { opacity: 0.8; }
         .footer-logo img { height: 32px; width: auto; }
 
-        .footer-logo span {
-            font-family: 'Outfit', sans-serif;
-            font-weight: 600;
-            font-size: 1.25rem;
-            color: var(--text);
-        }
-
         .footer-links {
             display: flex;
             justify-content: center;
@@ -344,78 +275,59 @@
                     <img src="logo.png" alt="ClickSync Logo" class="logo-img">
                     <h1>ClickSync</h1>
                 </div>
-                <p class="hero-text">Intelligent, real-time Shopify to ClickUp task synchronization & CRM management system. Sync orders, custom fields, priorities, and statuses in minutes.</p>
+                <p class="hero-text">Real-time Shopify to ClickUp task synchronization & CRM management system. Sync orders, customer updates, custom field values, and fulfillment states automatically.</p>
                 <div class="badge-row">
-                    <span class="badge">🔒 Encrypted API Tokens</span>
-                    <span class="badge">⏱️ 5-Min Queue Processor</span>
-                    <span class="badge">📊 Sync Audit Trail</span>
+                    <span class="badge"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="vertical-align: middle; margin-right: 4px; display: inline-block;"><path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>Encrypted API Tokens</span>
+                    <span class="badge"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="vertical-align: middle; margin-right: 4px; display: inline-block;"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>5-Min Queue Processor</span>
+                    <span class="badge"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="vertical-align: middle; margin-right: 4px; display: inline-block;"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2h2a2 2 0 002-2zm9-10v10a2 2 0 01-2 2h-2a2 2 0 01-2-2V9a2 2 0 012-2h2a2 2 0 012 2zm0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>Sync Audit Trail</span>
                 </div>
             </header>
 
-            <!-- USP SECTION -->
-            <div class="usp-section">
-                <p class="usp-label">Core Automation Focus</p>
-                <div class="usp-grid">
-
-                    <div class="usp-card">
-                        <span class="usp-num">01 — Setup</span>
-                        <h3>Frictionless ClickUp OAuth Authorization</h3>
-                        <p>Authenticate securely using our official ClickUp OAuth integration flow. Grant permissions to selected workspaces with a single click, and we handle token updates dynamically behind the scenes.</p>
-                    </div>
-
-                    <div class="usp-card pro">
-                        <span class="usp-num">02 — Custom Fields</span>
-                        <h3>Direct Shopify-to-ClickUp Variable Mapping</h3>
-                        <p>Bridge the gap between commerce data and project tracking. Map Order totals, buyer emails, line item quantities, and status flags directly to ClickUp custom fields without complex code.</p>
-                        <span class="pro-badge">✨ Available in Pro</span>
-                    </div>
-
-                    <div class="usp-card">
-                        <span class="usp-num">03 — Robustness</span>
-                        <h3>Queue-based Retry Mechanism</h3>
-                        <p>Webhooks can fail or get throttled. ClickSync resolves this by queueing event payloads and retrying failed actions automatically, keeping your task database consistent.</p>
-                    </div>
-
-                </div>
-            </div>
-
-            <h2>Getting Started & Configuration Modules</h2>
+            <h2>Core Sync Features</h2>
 
             <div class="features-grid">
+                <!-- Feature 1: Order & Customer Sync -->
                 <div class="feature-card">
-                    <span class="icon">🔑</span>
-                    <strong>Secure Authentication</strong>
-                    <p>Integrate your ClickUp account securely. Tokens are fully encrypted at rest using AES-256-GCM. We respect customer GDPR data and log removal directives.</p>
+                    <div class="icon-circle"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg></div>
+                    <strong>Order & Customer Triggers</strong>
+                    <p>Instantly trigger task creation when new orders are placed or new customers sign up in your store. Keep your CRM database fresh and ready.</p>
                 </div>
 
+                <!-- Feature 2: Fulfillment & Refunds -->
                 <div class="feature-card">
-                    <span class="icon">📋</span>
-                    <strong>Task Title & Desc Template</strong>
-                    <p>Design your ClickUp Task layout using dynamic variables (e.g. <code>{order_name}</code>, <code>{customer_name}</code>). Tailor details to fit your workflows.</p>
+                    <div class="icon-circle"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg></div>
+                    <strong>Fulfillment & Refund Rules</strong>
+                    <p>Sync draft orders, track shipping updates, handle delivery fulfillments, and record customer refund events in real-time as they happen.</p>
+                    <span class="pro-badge">Growth / Pro</span>
                 </div>
 
+                <!-- Feature 3: Custom Field Mapping -->
                 <div class="feature-card">
-                    <span class="icon">🔄</span>
-                    <strong>Event Mapping Rules</strong>
-                    <p>Select which event triggers create tasks in ClickUp. Set different targets for new Orders, draft orders, refunds, and fulfillments.</p>
+                    <div class="icon-circle"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg></div>
+                    <strong>Custom Field Mapping</strong>
+                    <p>Map Shopify variables (order totals, tax amounts, line items list, customer notes) directly to ClickUp custom fields (text, numbers, dropdowns).</p>
+                    <span class="pro-badge">Growth / Pro</span>
                 </div>
 
+                <!-- Feature 4: Dynamic Templates -->
                 <div class="feature-card">
-                    <span class="icon">🏷️</span>
-                    <strong>Status Alignment Mapping</strong>
-                    <p>Align Shopify order fulfillment and payment status (paid, pending, unfulfilled) with specific task columns in your ClickUp spaces.</p>
+                    <div class="icon-circle"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg></div>
+                    <strong>Dynamic Task Templates</strong>
+                    <p>Customize ClickUp task titles and descriptions using placeholders like <code>{order_name}</code> or <code>{customer_email}</code> for automated, detailed task notes.</p>
                 </div>
 
+                <!-- Feature 5: Status Alignment -->
                 <div class="feature-card">
-                    <span class="icon">🎯</span>
-                    <strong>Assignee & Priority Mappings</strong>
-                    <p>Automatically route tasks. Set priorities (High, Medium, Low) and assign tasks based on variables like order total or item category.</p>
+                    <div class="icon-circle"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 7h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg></div>
+                    <strong>Status & Priority Sync</strong>
+                    <p>Keep workflow stages aligned. Automatically map Shopify fulfillment/payment statuses to specific ClickUp status columns and priorities.</p>
                 </div>
 
+                <!-- Feature 6: Sync Audit Logs -->
                 <div class="feature-card">
-                    <span class="icon">📜</span>
-                    <strong>Audit Trail Logs</strong>
-                    <p>Monitor operations easily. View raw status flags, queue attempts, and click through straight to ClickUp tasks from our logs dashboard.</p>
+                    <div class="icon-circle"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg></div>
+                    <strong>Live Audit Trail Logs</strong>
+                    <p>Track every synchronization request. View execution states, retry histories, and access direct clickable links to the created ClickUp tasks.</p>
                 </div>
             </div>
 
