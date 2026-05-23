@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClickSync Privacy Policy - Your Data, Your Control | Loopstates</title>
+    <meta name="description"
+        content="Understand how ClickSync, the Shopify-to-ClickUp sync app by Loopstates, handles your data. All ClickUp credentials are encrypted at rest, and webhook data is processed securely.">
+    <link rel="icon" type="image/png" href="../favicon.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #6A2B8F;
+            --primary-hover: #531c73;
+            --bg: #f8fafc;
+            --text: #0f172a;
+            --text-muted: #64748b;
+            --glass: rgba(255, 255, 255, 0.7);
+            --glass-border: rgba(255, 255, 255, 0.5);
+            --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            background-image:
+                radial-gradient(circle at 10% 20%, rgba(106, 43, 143, 0.03) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(106, 43, 143, 0.03) 0%, transparent 40%);
+            color: var(--text);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            padding: 2rem 1rem;
+        }
+
+        .container { max-width: 900px; margin: 0 auto; width: 100%; }
+
+        .glass-panel {
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 3rem;
+            box-shadow: var(--shadow);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 2rem;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .logo-img { height: 48px; width: auto; border-radius: 12px; }
+
+        h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: var(--text);
+            letter-spacing: -0.02em;
+        }
+
+        .last-updated { color: var(--text-muted); font-size: 0.9rem; font-weight: 500; }
+
+        section { margin-bottom: 2.5rem; }
+
+        h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        p { margin-bottom: 1rem; color: var(--text-muted); }
+        p strong { color: var(--text); }
+
+        ul { list-style: none; margin-bottom: 1rem; }
+
+        li {
+            padding: 0.875rem 1.1rem;
+            background: rgba(255, 255, 255, 0.5);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            margin-bottom: 0.6rem;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.55;
+        }
+
+        li strong {
+            color: var(--text);
+            font-family: 'Outfit', sans-serif;
+            display: block;
+            margin-bottom: 0.2rem;
+        }
+
+        .highlight-box {
+            background: rgba(106, 43, 143, 0.06);
+            border: 1px solid rgba(106, 43, 143, 0.2);
+            border-radius: 14px;
+            padding: 1.25rem 1.5rem;
+            margin-bottom: 1.5rem;
+            color: #531c73;
+            font-size: 0.95rem;
+            font-weight: 500;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+
+        .warning-box {
+            background: rgba(245, 158, 11, 0.06);
+            border: 1px solid rgba(245, 158, 11, 0.2);
+            border-radius: 14px;
+            padding: 1.25rem 1.5rem;
+            margin-bottom: 1.5rem;
+            color: #78350f;
+            font-size: 0.95rem;
+        }
+
+        .warning-box strong { color: #92400e; }
+
+        .main-nav {
+            margin-top: 3rem;
+            padding: 1.25rem 2rem;
+            border-top: 1px solid #e2e8f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-link {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+            display: flex;
+            align-items: center;
+            line-height: normal;
+        }
+
+        .nav-link:hover { color: var(--primary); }
+
+        footer {
+            margin-top: 5rem;
+            padding-top: 3rem;
+            border-top: 1px solid #e2e8f0;
+            text-align: center;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            margin-bottom: 1.5rem;
+            transition: opacity 0.2s;
+        }
+
+        .footer-logo:hover { opacity: 0.8; }
+        .footer-logo img { height: 32px; width: auto; }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover { color: var(--primary); }
+        .copyright { color: var(--text-muted); font-size: 0.85rem; }
+
+        a { color: var(--primary); text-decoration: none; font-weight: 600; }
+        a:hover { color: var(--primary-hover); }
+
+        @media (max-width: 640px) {
+            .glass-panel { padding: 2rem 1.5rem; }
+            h1 { font-size: 1.75rem; }
+            .main-nav { gap: 1rem; }
+            .footer-links { gap: 1rem; flex-direction: column; align-items: center; }
+        }
+    </style>
+    <link rel="canonical" href="https://docs.loopstates.com/clicksync/privacy-policy.html">
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://docs.loopstates.com/clicksync/privacy-policy.html">
+    <meta property="og:title" content="ClickSync Privacy Policy">
+    <meta property="og:description" content="Read how ClickSync securely encrypts your ClickUp tokens at rest and processes sync data safely to ClickUp via Shopify webhooks.">
+    <meta property="og:site_name" content="Loopstates Docs">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="ClickSync Privacy Policy">
+    <meta name="twitter:description" content="Read how ClickSync securely encrypts your ClickUp tokens at rest and processes sync data safely to ClickUp via Shopify webhooks.">
+</head>
+
+<body>
+    <div class="container">
+        <div class="glass-panel">
+            <header>
+                <div class="logo-area">
+                    <img src="logo.png" alt="ClickSync Logo" class="logo-img">
+                    <h1>Privacy Policy</h1>
+                </div>
+                <p class="last-updated">Last Updated: May 24, 2026</p>
+            </header>
+
+            <section>
+                <div class="highlight-box">
+                    <span>✅</span>
+                    <span><strong>Short version:</strong> ClickSync securely handles merchant configurations and sync maps. We process store webhook payloads (orders, customers, refunds, checkouts, fulfillments) strictly to populate tasks in your mapped ClickUp lists. Your ClickUp API tokens are fully encrypted at rest using industry-standard AES-256-GCM. We never share your store or customer data with third parties.</span>
+                </div>
+                <p>Loopstates ("we", "us", "our") built ClickSync as an embedded Shopify application. This policy details what data is processed, how it is secured, and the mechanisms used to connect your Shopify store and ClickUp Workspace.</p>
+            </section>
+
+            <!-- ===================== DATA COLLECTION ===================== -->
+            <section>
+                <h2><span>🗂️</span> Data Processing & Storage</h2>
+                <p><strong>ClickSync processes store payloads on demand when event webhooks trigger.</strong> To perform synchronization, our app acts as a secure transit bridge between Shopify and ClickUp:</p>
+                <ul>
+                    <li>
+                        <strong>ClickUp API Access Tokens:</strong>
+                        To create tasks and fetch workspace lists on your behalf, we obtain an OAuth access token from ClickUp. This key is instantly encrypted using AES-256-GCM on our database and decrypted only when initiating active sync requests to ClickUp.
+                    </li>
+                    <li>
+                        <strong>Shopify Data (Orders, Customers, Draft Orders, Refunds, Checkouts, Fulfillments):</strong>
+                        We receive event payloads from Shopify's webhooks. We read only the fields mapped by your rules (e.g. customer name, email, order total, product names, fulfillment status) to generate corresponding ClickUp tasks. We do not maintain a permanent database of your customers or orders.
+                    </li>
+                    <li>
+                        <strong>Sync Logs:</strong>
+                        To help you troubleshoot and trace sync events, we store execution logs (sync status, timestamp, ClickUp task URL, and any API error messages) for up to 7 days, after which they are automatically pruned.
+                    </li>
+                </ul>
+            </section>
+
+            <!-- ===================== SECURITY ===================== -->
+            <section>
+                <h2><span>🔒</span> Security & Token Protection</h2>
+                <p>We prioritize the protection of your merchant credentials and data:</p>
+                <ul>
+                    <li>
+                        <strong>Cryptographic Encryption:</strong>
+                        Tokens are encrypted with AES-256-GCM at rest. The master decryption key is managed securely in the app environment and is never logged or exposed.
+                    </li>
+                    <li>
+                        <strong>HMAC Signature Verification:</strong>
+                        Every request and webhook originating from Shopify is cryptographically verified using HMAC SHA-256 headers before processing to ensure the request is genuine.
+                    </li>
+                    <li>
+                        <strong>Safe Communication:</strong>
+                        All transfers between Shopify, our servers, and ClickUp's API endpoints are encrypted in transit via Transport Layer Security (TLS 1.3 / HTTPS).
+                    </li>
+                </ul>
+            </section>
+
+            <!-- ===================== GDPR ===================== -->
+            <section>
+                <h2><span>🇪🇺</span> GDPR & Data Subject Rights</h2>
+                <p>ClickSync is fully compliant with Shopify's mandatory GDPR framework. We support the following webhooks:</p>
+                <ul>
+                    <li><strong>Customer Data Request (<code>customers/data_request</code>):</strong> Allows merchants to request customer record details. We log these for manual verification and support extraction.</li>
+                    <li><strong>Customer Redaction (<code>customers/redact</code>):</strong> Triggers deletion of any temporary queue logs matching the customer.</li>
+                    <li><strong>Shop Redaction (<code>shop/redact</code>):</strong> Deletes all session mappings, configuration settings, and ClickUp connection tokens within our database if the app is uninstalled.</li>
+                </ul>
+            </section>
+
+            <!-- ===================== BILLING ===================== -->
+            <section>
+                <h2><span>💳</span> Shopify Billing</h2>
+                <p>All transactions, subscription billing, and plan upgrades are handled exclusively via the **Shopify Billing API**. ClickSync does not collect, process, or store credit card details or bank credentials.</p>
+            </section>
+
+            <!-- ===================== CONTACT ===================== -->
+            <section>
+                <h2><span>🤝</span> Contact Us</h2>
+                <p>If you have questions, concerns, or requests regarding this Privacy Policy or your data, please contact us at <a href="mailto:support@loopstates.com">support@loopstates.com</a>.</p>
+            </section>
+
+            <nav class="main-nav">
+                <a href="../index.html" class="nav-link">← All Products</a>
+                <a href="index.html" class="nav-link">ClickSync Home</a>
+                <a href="plans.html" class="nav-link">Pricing & Plans</a>
+                <a href="support.html" class="nav-link">Support & FAQ</a>
+            </nav>
+        </div>
+
+        <footer>
+            <a href="https://loopstates.com" class="footer-logo">
+                <img src="../loopstates-logo.png" alt="Loopstates Logo">
+            </a>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="support.html">Support</a>
+                <a href="mailto:support@loopstates.com">Contact</a>
+            </div>
+            <p class="copyright">&copy; <span id="currentYear"></span> Loopstates. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>

@@ -107,4 +107,30 @@
     <priority>0.5</priority>
   </url>
 
+  <!-- ClickSync -->
+  <url>
+    <loc>https://docs.loopstates.com/clicksync/index.html</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://docs.loopstates.com/clicksync/support.html</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://docs.loopstates.com/clicksync/plans.html</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://docs.loopstates.com/clicksync/privacy-policy.html</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
 </urlset>

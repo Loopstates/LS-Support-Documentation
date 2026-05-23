@@ -31,3 +31,10 @@ Web Authority is a professional SEO analyzer and page intelligence browser exten
 - [Product Home](web-authority/index.html)
 - [Support & FAQ](web-authority/support.html)
 - [Privacy Policy](web-authority/privacy-policy.html)
+
+## ClickSync
+ClickSync is an intelligent, real-time Shopify to ClickUp task synchronization & CRM management system. It maps orders, draft orders, customers, refunds, checkouts, and fulfillment events into ClickUp tasks with custom fields, statuses, priority rules, and automated queue retries.
+- [Product Home](clicksync/index.html)
+- [Support & FAQ](clicksync/support.html)
+- [Pricing & Plans](clicksync/plans.html)
+- [Privacy Policy](clicksync/privacy-policy.html)

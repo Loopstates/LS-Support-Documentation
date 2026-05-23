@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClickSync Support & FAQ - Get Help | Loopstates</title>
+    <meta name="description"
+        content="Find answers to common questions about ClickSync, the Shopify to ClickUp sync app. Learn about webhook triggers, custom field mappings, and configuration troubleshooting.">
+    <link rel="icon" type="image/png" href="../favicon.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #6A2B8F;
+            --primary-hover: #531c73;
+            --bg: #f8fafc;
+            --text: #0f172a;
+            --text-muted: #64748b;
+            --glass: rgba(255, 255, 255, 0.7);
+            --glass-border: rgba(255, 255, 255, 0.5);
+            --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            background-image:
+                radial-gradient(circle at 10% 20%, rgba(106, 43, 143, 0.03) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(106, 43, 143, 0.03) 0%, transparent 40%);
+            color: var(--text);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            padding: 2rem 1rem;
+        }
+
+        .container { max-width: 900px; margin: 0 auto; width: 100%; }
+
+        .glass-panel {
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 3rem;
+            box-shadow: var(--shadow);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 2rem;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .logo-img { height: 48px; width: auto; border-radius: 12px; }
+
+        h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: var(--text);
+            letter-spacing: -0.02em;
+        }
+
+        .subtitle { color: var(--text-muted); font-size: 1.1rem; }
+
+        h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.75rem;
+            margin: 3rem 0 1.5rem;
+            color: var(--text);
+        }
+
+        .contact-card {
+            background: #fff;
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            box-shadow: var(--shadow);
+        }
+
+        .contact-card p { margin-bottom: 1.5rem; color: var(--text-muted); }
+
+        .email-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: var(--primary);
+            color: white;
+            padding: 0.875rem 2rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .email-btn:hover {
+            background: var(--primary-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(106, 43, 143, 0.3);
+        }
+
+        .faq-grid { display: grid; gap: 1.25rem; }
+
+        .faq-card {
+            background: rgba(255, 255, 255, 0.5);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .faq-card:hover {
+            background: #fff;
+            border-color: var(--primary);
+            box-shadow: var(--shadow);
+        }
+
+        .faq-card h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.1rem;
+            color: var(--text);
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+
+        .faq-card p { color: var(--text-muted); font-size: 0.95rem; padding-left: 1.9rem; }
+
+        .main-nav {
+            margin-top: 3rem;
+            padding: 1.25rem 2rem;
+            border-top: 1px solid #e2e8f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-link {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+            display: flex;
+            align-items: center;
+            line-height: normal;
+        }
+
+        .nav-link:hover { color: var(--primary); }
+        .nav-link.active { color: var(--primary); font-weight: 600; }
+
+        footer {
+            margin-top: 5rem;
+            padding-top: 3rem;
+            border-top: 1px solid #e2e8f0;
+            text-align: center;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            margin-bottom: 1.5rem;
+            transition: opacity 0.2s;
+        }
+
+        .footer-logo:hover { opacity: 0.8; }
+        .footer-logo img { height: 32px; width: auto; }
+
+        .footer-logo span {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            font-size: 1.25rem;
+            color: var(--text);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover { color: var(--primary); }
+        .copyright { color: var(--text-muted); font-size: 0.85rem; }
+
+        @media (max-width: 640px) {
+            .glass-panel { padding: 2rem 1.5rem; }
+            h1 { font-size: 1.75rem; }
+            .main-nav { gap: 1rem; }
+            .footer-links { gap: 1rem; flex-direction: column; align-items: center; }
+        }
+    </style>
+    <link rel="canonical" href="https://docs.loopstates.com/clicksync/support.html">
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://docs.loopstates.com/clicksync/support.html">
+    <meta property="og:title" content="ClickSync Support & FAQ">
+    <meta property="og:description" content="Get help with ClickSync. Find answers about sync rules, custom field mapping, rates, Shopify events, and ClickUp task logs.">
+    <meta property="og:site_name" content="Loopstates Docs">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="ClickSync Support & FAQ">
+    <meta name="twitter:description" content="Get help with ClickSync. Find answers about sync rules, custom field mapping, rates, Shopify events, and ClickUp task logs.">
+</head>
+
+<body>
+    <div class="container">
+        <div class="glass-panel">
+            <header>
+                <div class="logo-area">
+                    <img src="logo.png" alt="ClickSync Logo" class="logo-img">
+                    <h1>Support & FAQ</h1>
+                </div>
+                <p class="subtitle">Everything you need to know about ClickSync</p>
+            </header>
+
+            <section>
+                <h2>Need direct help?</h2>
+                <div class="contact-card">
+                    <p>Have a question about configuring your sync rules, mapping custom fields, or running into API connection issues? Our support team responds within 24–48 hours.</p>
+                    <a href="mailto:support@loopstates.com" class="email-btn">
+                        <span>✉️</span> support@loopstates.com
+                    </a>
+                </div>
+            </section>
+
+            <section>
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-grid">
+                    <div class="faq-card">
+                        <h3><span>❓</span> What is ClickSync?</h3>
+                        <p>ClickSync is an embedded Shopify app that automatically syncs order and customer events to your ClickUp Workspace. It acts as an automated CRM connector, transforming events like new orders or fulfillments into actionable ClickUp tasks.</p>
+                    </div>
+
+                    <div class="faq-card">
+                        <h3><span>🔄</span> How fast do Shopify events sync to ClickUp?</h3>
+                        <p>ClickSync uses a secure queue processor that processes pending events every 5 minutes. This batched pattern ensures your API limits are respected, prevents duplicate entries during webhooks retries, and avoids hitting ClickUp's rate limits.</p>
+                    </div>
+
+                    <div class="faq-card">
+                        <h3><span>⚡</span> Does it impact my store's loading speed?</h3>
+                        <p>No. ClickSync runs completely asynchronously in the background. When an order is placed, Shopify sends a webhook notification to our app server. The customer's frontend checkout experience is 100% unaffected.</p>
+                    </div>
+
+                    <div class="faq-card">
+                        <h3><span>📋</span> What events can I synchronize?</h3>
+                        <p>We support a broad range of store triggers, including: new Orders, Draft Orders, Customers registration, Refunds creation, Checkout updates, and Order Fulfillment events.</p>
+                    </div>
+
+                    <div class="faq-card">
+                        <h3><span>🔧</span> Can I map Shopify variables to ClickUp custom fields?</h3>
+                        <p>Yes. With the **Pro Plan**, you can map any Shopify data point (e.g. Order Total, Customer Email, Shipping Address, Item Quantity) directly to text, number, checkbox, drop-down, or currency custom fields in ClickUp.</p>
+                    </div>
+
+                    <div class="faq-card">
+                        <h3><span>📊</span> Where can I check the sync history?</h3>
+                        <p>Inside the app, click the **Sync Audit Logs** tab. You'll see a complete historical grid showing the trigger time, event type, status (Success/Failed), and a direct clickable URL to the generated ClickUp task for easy validation.</p>
+                    </div>
+
+                    <div class="faq-card">
+                        <h3><span>⚙️</span> How do I connect my ClickUp Workspace?</h3>
+                        <p>During the onboarding wizard, click "Connect ClickUp". You will be redirected to ClickUp's secure OAuth consent page. Log in, select the workspace you wish to grant access to, and you will be returned to the app to complete mapping rules.</p>
+                    </div>
+
+                    <div class="faq-card">
+                        <h3><span>🗑️</span> What happens if I uninstall the app?</h3>
+                        <p>When you uninstall ClickSync, Shopify triggers a redaction webhook. We immediately delete all your credentials, access tokens, sync mappings, and local session details from our database, ensuring zero leftover footprints.</p>
+                    </div>
+                </div>
+            </section>
+
+            <nav class="main-nav">
+                <a href="../index.html" class="nav-link">← All Products</a>
+                <a href="index.html" class="nav-link">ClickSync Home</a>
+                <a href="plans.html" class="nav-link">Pricing & Plans</a>
+                <a href="privacy-policy.html" class="nav-link">Privacy Policy</a>
+            </nav>
+        </div>
+
+        <footer>
+            <a href="https://loopstates.com" class="footer-logo">
+                <img src="../loopstates-logo.png" alt="Loopstates Logo">
+            </a>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="mailto:support@loopstates.com">Contact</a>
+            </div>
+            <p class="copyright">&copy; <span id="currentYear"></span> Loopstates. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>

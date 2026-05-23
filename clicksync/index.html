@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClickSync Documentation - Shopify to ClickUp CRM Sync | Loopstates</title>
+    <meta name="description"
+        content="Welcome to the ClickSync documentation. Learn how to configure your sync rules, map order variables to ClickUp custom fields, and track real-time CRM updates.">
+    <link rel="icon" type="image/png" href="../favicon.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #6A2B8F;
+            --primary-hover: #531c73;
+            --primary-soft: rgba(106, 43, 143, 0.08);
+            --primary-glow: rgba(106, 43, 143, 0.15);
+            --bg: #f8fafc;
+            --text: #0f172a;
+            --text-muted: #64748b;
+            --glass: rgba(255, 255, 255, 0.7);
+            --glass-border: rgba(255, 255, 255, 0.5);
+            --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            background-image:
+                radial-gradient(circle at 10% 20%, rgba(106, 43, 143, 0.03) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(106, 43, 143, 0.03) 0%, transparent 40%);
+            color: var(--text);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            padding: 2rem 1rem;
+        }
+
+        .container { max-width: 960px; margin: 0 auto; width: 100%; }
+
+        .glass-panel {
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 3rem;
+            box-shadow: var(--shadow);
+        }
+
+        header { text-align: center; margin-bottom: 3rem; }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .logo-img { height: 56px; width: auto; border-radius: 14px; }
+
+        h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text);
+            letter-spacing: -0.02em;
+        }
+
+        .hero-text {
+            font-size: 1.125rem;
+            color: var(--text-muted);
+            max-width: 680px;
+            margin: 0 auto 2rem;
+        }
+
+        .badge-row {
+            display: flex;
+            justify-content: center;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            background: var(--primary-soft);
+            border: 1px solid rgba(106, 43, 143, 0.2);
+            border-radius: 999px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--primary-hover);
+            letter-spacing: 0.01em;
+        }
+
+        h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.5rem;
+            margin: 2.5rem 0 1.5rem;
+            text-align: center;
+        }
+
+        /* USP Section */
+        .usp-section { margin: 0 0 3rem; }
+        .usp-label {
+            text-align: center;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--primary);
+            margin-bottom: 1.25rem;
+        }
+
+        .usp-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            gap: 1.25rem;
+        }
+
+        .usp-card {
+            background: #fff;
+            border: 1px solid #e2e8f0;
+            border-radius: 20px;
+            padding: 1.75rem 1.65rem;
+            position: relative;
+            overflow: hidden;
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+        }
+
+        .usp-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 30px -8px rgba(106, 43, 143, 0.12);
+        }
+
+        .usp-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), #8b5cf6);
+        }
+
+        .usp-card.pro::before {
+            background: linear-gradient(90deg, #f59e0b, #fbbf24);
+        }
+
+        .usp-num {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+            display: block;
+        }
+
+        .usp-card h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 0.6rem;
+            line-height: 1.35;
+        }
+
+        .usp-card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .pro-badge {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.3rem 0.8rem;
+            background: rgba(245, 158, 11, 0.1);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            border-radius: 999px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: #92400e;
+            letter-spacing: 0.02em;
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.25rem;
+            margin-bottom: 3rem;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.5);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            background: #fff;
+            box-shadow: var(--shadow);
+            border-color: var(--primary);
+        }
+
+        .feature-card .icon {
+            font-size: 1.75rem;
+            margin-bottom: 0.75rem;
+            display: block;
+        }
+
+        .feature-card strong {
+            display: block;
+            color: var(--text);
+            font-family: 'Outfit', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+        }
+
+        .feature-card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.55;
+        }
+
+        /* Navigation */
+        .main-nav {
+            margin-top: 3rem;
+            padding: 1.25rem 2rem;
+            border-top: 1px solid #e2e8f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-link {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+            display: flex;
+            align-items: center;
+            line-height: normal;
+        }
+
+        .nav-link:hover { color: var(--primary); }
+        .nav-link.back { color: var(--primary); font-weight: 600; }
+
+        /* Footer */
+        footer {
+            margin-top: 5rem;
+            padding-top: 3rem;
+            border-top: 1px solid #e2e8f0;
+            text-align: center;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            margin-bottom: 1.5rem;
+            transition: opacity 0.2s;
+        }
+
+        .footer-logo:hover { opacity: 0.8; }
+        .footer-logo img { height: 32px; width: auto; }
+
+        .footer-logo span {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            font-size: 1.25rem;
+            color: var(--text);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover { color: var(--primary); }
+        .copyright { color: var(--text-muted); font-size: 0.85rem; }
+
+        @media (max-width: 640px) {
+            .glass-panel { padding: 2rem 1.5rem; }
+            h1 { font-size: 2rem; }
+            .hero-text { font-size: 1rem; }
+            .features-grid { grid-template-columns: 1fr; }
+            .main-nav { gap: 1rem; }
+            .footer-links { gap: 1rem; flex-direction: column; align-items: center; }
+        }
+    </style>
+    <link rel="canonical" href="https://docs.loopstates.com/clicksync/">
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://docs.loopstates.com/clicksync/">
+    <meta property="og:title" content="ClickSync - Shopify to ClickUp Sync Documentation">
+    <meta property="og:description" content="Integrate Shopify with ClickUp. Learn how to map orders, custom fields, statuses, priorities, and check sync audit history logs.">
+    <meta property="og:site_name" content="Loopstates Docs">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="ClickSync - Shopify to ClickUp Sync Documentation">
+    <meta name="twitter:description" content="Integrate Shopify with ClickUp. Learn how to map orders, custom fields, statuses, priorities, and check sync audit history logs.">
+</head>
+
+<body>
+    <div class="container">
+        <div class="glass-panel">
+            <header>
+                <div class="logo-area">
+                    <img src="logo.png" alt="ClickSync Logo" class="logo-img">
+                    <h1>ClickSync</h1>
+                </div>
+                <p class="hero-text">Intelligent, real-time Shopify to ClickUp task synchronization & CRM management system. Sync orders, custom fields, priorities, and statuses in minutes.</p>
+                <div class="badge-row">
+                    <span class="badge">🔒 Encrypted API Tokens</span>
+                    <span class="badge">⏱️ 5-Min Queue Processor</span>
+                    <span class="badge">📊 Sync Audit Trail</span>
+                </div>
+            </header>
+
+            <!-- USP SECTION -->
+            <div class="usp-section">
+                <p class="usp-label">Core Automation Focus</p>
+                <div class="usp-grid">
+
+                    <div class="usp-card">
+                        <span class="usp-num">01 — Setup</span>
+                        <h3>Frictionless ClickUp OAuth Authorization</h3>
+                        <p>Authenticate securely using our official ClickUp OAuth integration flow. Grant permissions to selected workspaces with a single click, and we handle token updates dynamically behind the scenes.</p>
+                    </div>
+
+                    <div class="usp-card pro">
+                        <span class="usp-num">02 — Custom Fields</span>
+                        <h3>Direct Shopify-to-ClickUp Variable Mapping</h3>
+                        <p>Bridge the gap between commerce data and project tracking. Map Order totals, buyer emails, line item quantities, and status flags directly to ClickUp custom fields without complex code.</p>
+                        <span class="pro-badge">✨ Available in Pro</span>
+                    </div>
+
+                    <div class="usp-card">
+                        <span class="usp-num">03 — Robustness</span>
+                        <h3>Queue-based Retry Mechanism</h3>
+                        <p>Webhooks can fail or get throttled. ClickSync resolves this by queueing event payloads and retrying failed actions automatically, keeping your task database consistent.</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <h2>Getting Started & Configuration Modules</h2>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <span class="icon">🔑</span>
+                    <strong>Secure Authentication</strong>
+                    <p>Integrate your ClickUp account securely. Tokens are fully encrypted at rest using AES-256-GCM. We respect customer GDPR data and log removal directives.</p>
+                </div>
+
+                <div class="feature-card">
+                    <span class="icon">📋</span>
+                    <strong>Task Title & Desc Template</strong>
+                    <p>Design your ClickUp Task layout using dynamic variables (e.g. <code>{order_name}</code>, <code>{customer_name}</code>). Tailor details to fit your workflows.</p>
+                </div>
+
+                <div class="feature-card">
+                    <span class="icon">🔄</span>
+                    <strong>Event Mapping Rules</strong>
+                    <p>Select which event triggers create tasks in ClickUp. Set different targets for new Orders, draft orders, refunds, and fulfillments.</p>
+                </div>
+
+                <div class="feature-card">
+                    <span class="icon">🏷️</span>
+                    <strong>Status Alignment Mapping</strong>
+                    <p>Align Shopify order fulfillment and payment status (paid, pending, unfulfilled) with specific task columns in your ClickUp spaces.</p>
+                </div>
+
+                <div class="feature-card">
+                    <span class="icon">🎯</span>
+                    <strong>Assignee & Priority Mappings</strong>
+                    <p>Automatically route tasks. Set priorities (High, Medium, Low) and assign tasks based on variables like order total or item category.</p>
+                </div>
+
+                <div class="feature-card">
+                    <span class="icon">📜</span>
+                    <strong>Audit Trail Logs</strong>
+                    <p>Monitor operations easily. View raw status flags, queue attempts, and click through straight to ClickUp tasks from our logs dashboard.</p>
+                </div>
+            </div>
+
+            <nav class="main-nav">
+                <a href="../index.html" class="nav-link back">← All Products</a>
+                <a href="plans.html" class="nav-link">Pricing & Plans</a>
+                <a href="support.html" class="nav-link">Support & FAQ</a>
+                <a href="privacy-policy.html" class="nav-link">Privacy Policy</a>
+            </nav>
+        </div>
+
+        <footer>
+            <a href="https://loopstates.com" class="footer-logo">
+                <img src="../loopstates-logo.png" alt="Loopstates Logo">
+            </a>
+            <div class="footer-links">
+                <a href="plans.html">Pricing</a>
+                <a href="support.html">Support</a>
+                <a href="privacy-policy.html">Privacy Policy</a>
+            </div>
+            <p class="copyright">&copy; <span id="currentYear"></span> Loopstates. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>

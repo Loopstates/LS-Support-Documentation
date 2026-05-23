@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClickSync Plans & Pricing - Growth & Pro Plans | Loopstates</title>
+    <meta name="description"
+        content="Compare ClickSync Growth and Pro tiers. Find the plan that fits your business sync volume, custom field mappings, and automated tasks management rules.">
+    <link rel="icon" type="image/png" href="../favicon.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #6A2B8F;
+            --primary-hover: #531c73;
+            --primary-soft: rgba(106, 43, 143, 0.08);
+            --primary-glow: rgba(106, 43, 143, 0.15);
+            --bg: #f8fafc;
+            --text: #0f172a;
+            --text-muted: #64748b;
+            --glass: rgba(255, 255, 255, 0.7);
+            --glass-border: rgba(255, 255, 255, 0.5);
+            --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+            --border: #e2e8f0;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            background-image:
+                radial-gradient(circle at 10% 20%, rgba(106, 43, 143, 0.03) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(106, 43, 143, 0.03) 0%, transparent 40%);
+            color: var(--text);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            padding: 2rem 1rem;
+        }
+
+        .container { max-width: 1000px; margin: 0 auto; width: 100%; }
+
+        .glass-panel {
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 3rem;
+            box-shadow: var(--shadow);
+        }
+
+        header { text-align: center; margin-bottom: 3.5rem; }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .logo-img { height: 56px; width: auto; border-radius: 14px; }
+
+        h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text);
+            letter-spacing: -0.02em;
+        }
+
+        .hero-text {
+            font-size: 1.125rem;
+            color: var(--text-muted);
+            max-width: 680px;
+            margin: 0 auto 2rem;
+        }
+
+        /* Pricing Cards */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .price-card {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .price-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px -12px rgba(106, 43, 143, 0.1);
+        }
+
+        .price-card.featured {
+            border: 2px solid var(--primary);
+            box-shadow: 0 15px 30px -10px var(--primary-glow);
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary);
+            color: white;
+            padding: 4px 16px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .tier-name {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .tier-price {
+            font-family: 'Outfit', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: baseline;
+            gap: 4px;
+        }
+
+        .tier-price span {
+            font-size: 1rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .tier-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
+            min-height: 3rem;
+        }
+
+        .feature-list {
+            list-style: none;
+            margin-bottom: 2.5rem;
+            flex: 1;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+            color: var(--text);
+        }
+
+        .feature-item svg {
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .feature-item.disabled {
+            color: var(--text-muted);
+            opacity: 0.6;
+        }
+
+        .cta-btn {
+            display: block;
+            text-align: center;
+            padding: 1rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            font-family: 'Outfit', sans-serif;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .cta-btn.secondary {
+            background: var(--bg);
+            color: var(--text);
+            border: 1px solid var(--border);
+        }
+
+        .cta-btn.primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .cta-btn:hover {
+            filter: brightness(0.95);
+            transform: scale(1.02);
+        }
+
+        /* Comparison Table */
+        .comparison-section h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .table-wrapper {
+            overflow-x: auto;
+            background: white;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        th, td {
+            padding: 1.25rem 1.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        th {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            color: var(--text);
+            background: #fafafa;
+        }
+
+        .category-row {
+            background: #f8fafc;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--primary);
+        }
+
+        .check-icon { color: var(--primary); font-weight: bold; }
+        .cross-icon { color: var(--text-muted); opacity: 0.5; }
+
+        /* Navigation */
+        .main-nav {
+            margin-top: 3rem;
+            padding: 1.25rem 2rem;
+            border-top: 1px solid #e2e8f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-link {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .nav-link:hover { color: var(--primary); }
+        .nav-link.back { color: var(--primary); font-weight: 600; }
+
+        /* Footer */
+        footer {
+            margin-top: 5rem;
+            padding-top: 3rem;
+            border-top: 1px solid #e2e8f0;
+            text-align: center;
+        }
+
+        .footer-logo img { height: 32px; width: auto; margin-bottom: 1rem; }
+        .copyright { color: var(--text-muted); font-size: 0.85rem; }
+
+        @media (max-width: 640px) {
+            .glass-panel { padding: 2rem 1.5rem; }
+            h1 { font-size: 2rem; }
+            .pricing-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="glass-panel">
+            <header>
+                <div class="logo-area">
+                    <img src="logo.png" alt="ClickSync Logo" class="logo-img">
+                    <h1>Plans & Pricing</h1>
+                </div>
+                <p class="hero-text">Scale your store operations. Automate your CRM sync from Shopify to ClickUp seamlessly.</p>
+            </header>
+
+            <div class="pricing-grid">
+                <!-- Growth Plan -->
+                <div id="card-growth" class="price-card">
+                    <div class="tier-name">Growth Plan</div>
+                    <div class="tier-price">$9.99<span>/month</span></div>
+                    <p class="tier-desc">Great for growing businesses wanting simple sync automation.</p>
+                    <ul class="feature-list">
+                        <li class="feature-item">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                            Up to 1,000 synced events / mo
+                        </li>
+                        <li class="feature-item">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                            Orders & Customers Triggers
+                        </li>
+                        <li class="feature-item">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                            Status Mappings
+                        </li>
+                        <li class="feature-item">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                            Real-time Sync Logs (7 days)
+                        </li>
+                        <li class="feature-item disabled">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                            Custom Field Mappings
+                        </li>
+                    </ul>
+                    <a href="https://admin.shopify.com" class="cta-btn secondary">Upgrade in Store</a>
+                </div>
+
+                <!-- Pro Plan -->
+                <div id="card-pro" class="price-card featured">
+                    <div class="popular-badge">Unlocks Custom Fields</div>
+                    <div class="tier-name">Pro Plan</div>
+                    <div class="tier-price">$24.99<span>/month</span></div>
+                    <p class="tier-desc">Our ultimate package for complete database and CRM mapping controls.</p>
+                    <ul class="feature-list">
+                        <li class="feature-item">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color:var(--primary);"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                            <strong>Up to 5,000 synced events / mo</strong>
+                        </li>
+                        <li class="feature-item">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color:var(--primary);"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                            <strong>All Event Triggers (Draft Orders, Refunds, Fulfillments, Checkouts)</strong>
+                        </li>
+                        <li class="feature-item">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color:var(--primary);"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                            <strong>Custom Field Mappings</strong>
+                        </li>
+                        <li class="feature-item">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color:var(--primary);"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                            <strong>Custom Priorities & Assignee Rules</strong>
+                        </li>
+                        <li class="feature-item">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color:var(--primary);"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                            <strong>Priority Sync Support</strong>
+                        </li>
+                    </ul>
+                    <a href="https://admin.shopify.com" class="cta-btn primary">Upgrade to Pro Now</a>
+                </div>
+            </div>
+
+            <div class="comparison-section">
+                <h2>Full Feature Comparison</h2>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th>Growth Plan</th>
+                                <th>Pro Plan</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="category-row"><td colspan="3">Shopify Event Triggers</td></tr>
+                            <tr><td>Shopify Orders (Create/Update)</td><td class="check-icon">✓</td><td class="check-icon">✓</td></tr>
+                            <tr><td>New Customer Accounts</td><td class="check-icon">✓</td><td class="check-icon">✓</td></tr>
+                            <tr><td>Draft Orders (Created)</td><td class="cross-icon">✕</td><td class="check-icon">✓</td></tr>
+                            <tr><td>Refund Events</td><td class="cross-icon">✕</td><td class="check-icon">✓</td></tr>
+                            <tr><td>Fulfillment & Delivery Events</td><td class="cross-icon">✕</td><td class="check-icon">✓</td></tr>
+                            <tr><td>Checkout Cart Abandonment Updates</td><td class="cross-icon">✕</td><td class="check-icon">✓</td></tr>
+                            
+                            <tr class="category-row"><td colspan="3">Sync Mapping Controls</td></tr>
+                            <tr><td>Task Title Template customization</td><td class="check-icon">✓</td><td class="check-icon">✓</td></tr>
+                            <tr><td>Task Description variables</td><td class="check-icon">✓</td><td class="check-icon">✓</td></tr>
+                            <tr><td>ClickUp Status Map matching</td><td class="check-icon">✓</td><td class="check-icon">✓</td></tr>
+                            <tr><td>Shopify fields to ClickUp Custom Fields</td><td class="cross-icon">✕</td><td class="check-icon">✓</td></tr>
+                            <tr><td>Dynamic Task Priority matching</td><td class="cross-icon">✕</td><td class="check-icon">✓</td></tr>
+                            <tr><td>Assignee Rules mappings</td><td class="cross-icon">✕</td><td class="check-icon">✓</td></tr>
+
+                            <tr class="category-row"><td colspan="3">Operational Limits</td></tr>
+                            <tr><td>Monthly Sync Limit</td><td>1,000 items</td><td>5,000 items</td></tr>
+                            <tr><td>Historical Execution Logs</td><td>7 days</td><td>7 days</td></tr>
+                            <tr><td>Background Retry Mechanism</td><td class="check-icon">✓</td><td class="check-icon">✓</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <nav class="main-nav">
+                <a href="../index.html" class="nav-link">← All Products</a>
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="support.html" class="nav-link">Support & FAQ</a>
+                <a href="privacy-policy.html" class="nav-link">Privacy Policy</a>
+            </nav>
+        </div>
+
+        <footer>
+            <a href="https://loopstates.com" class="footer-logo">
+                <img src="../loopstates-logo.png" alt="Loopstates Logo">
+            </a>
+            <p class="copyright">&copy; 2026 Loopstates. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+
+</html>
